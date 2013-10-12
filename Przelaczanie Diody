@@ -1,0 +1,65 @@
+/*
+  Przelaczanie Diody
+  By Heromat
+*/
+/* 
+  DIGITAL [
+  Dioda Zielona - 9 pin
+  Dioda Czerwona - 11 pin
+  Przelacznik - 2 pin
+  ]
+*/
+
+
+int LedGreen = 9;
+int LedRed = 11;
+int buttonPin = 2;
+boolean buttonState;
+boolean buttonEqual;
+boolean lastUse = false;
+
+void setup() {
+  
+  pinMode(LedGreen, OUTPUT);
+  pinMode(LedRed, OUTPUT);
+  pinMode(buttonPin, INPUT);
+  
+}
+
+void loop(){
+  
+  buttonState = digitalRead(buttonPin);
+  
+  if (buttonState == 1)
+  {
+    if(lastUse == true)
+    {
+      buttonEqual = true;
+      lastUse = false;
+    }else {
+        buttonEqual = false;
+        lastUse = true;
+       }  
+  } 
+  
+  if (buttonEqual == true)
+  {    
+    digitalWrite(LedRed, HIGH);
+    
+    
+  }else{
+    digitalWrite(LedRed, LOW);
+    }
+   
+  if (buttonEqual == false)
+ {
+    digitalWrite(LedGreen, HIGH);
+    
+ }else {
+   digitalWrite(LedGreen, LOW);
+   }   
+  
+  
+  
+
+}
