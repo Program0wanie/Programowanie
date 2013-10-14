@@ -1,0 +1,12 @@
+void setup () { 
+	pinMode(13,output);
+void loop () {
+	digitalWrite (13, HIGH); Dioda LED Świeci 
+	delay(200); 		 Opóźnienie 300 ms 
+	digitalWrite (13, LOW);  
+	delay(200);
+	digitalWrite (13, HIGH);
+	delay(700);
+	digitalWrite(13, LOW);
+	delay(700);
+}
